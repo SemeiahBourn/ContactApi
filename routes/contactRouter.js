@@ -6,7 +6,7 @@ const router=express.Router()
 router.get('/', async (req, res) => {
     try {
         const contact = await ContactModel.find()
-        res.status(200).json(todos)
+        res.status(200).json(contact)
     } catch (error) {
         console.log(error)
     }
@@ -56,7 +56,7 @@ router.delete('/:id', async (req, res) => {
 
     try {
         const contact = await ContactModel.findByIdAndDelete(id)
-        res.status(200).json({msg: 'Todo was deleted!'})
+        res.status(200).json({msg: 'contact was deleted!'})
     } catch (error) {
         console.log(error);
     }
